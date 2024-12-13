@@ -5,9 +5,9 @@ using UnityEngine;
 public class ModelsShower : MonoBehaviour
 {
     private readonly Dictionary<string, ModelToView> _spawnedModels = new();
-    private readonly float _minScale = 0.5f;
+    private readonly float _minScale = 0.2f;
 
-    public ModelToView _activeModel;
+    private ModelToView _activeModel;
     private ModelsFactory _modelsFactory;
 
     private Vector3 _position = Vector3.zero;
@@ -69,12 +69,12 @@ public class ModelsShower : MonoBehaviour
         }
     }
 
-    public void SetColor(Color color)
+    public void SetColor(Color color, int index)
     {
         if (_activeModel == null)
             return;
 
-        _activeModel.SetColor(color);
+        _activeModel.SetColor(color, index);
     }
 
     private void SetActiveModel(ModelToView modelToView)

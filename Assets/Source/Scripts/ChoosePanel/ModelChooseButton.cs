@@ -1,8 +1,11 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
-public class ModelChooseButton : MonoBehaviour
+public class ModelChooseButton : MonoBehaviour 
 {
+    [SerializeField] private TMP_Text _nameLabel;
+
     private Button _button;
     private string _modelPath;
     private ModelsShower _modelsShower;
@@ -22,10 +25,11 @@ public class ModelChooseButton : MonoBehaviour
         _button.onClick.RemoveListener(ShowModel);
     }
 
-    public void Init(string modelPath, ModelsShower modelsShower)
+    public void Init(string modelPath, ModelsShower modelsShower, string name)
     {
         _modelPath = modelPath;
         _modelsShower = modelsShower;
+        _nameLabel.text = name;
     }
 
     private void ShowModel()

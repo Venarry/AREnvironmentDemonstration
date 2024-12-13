@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ModelsChoosePanel : MonoBehaviour
+public class ModelsChoosePanel : MonoBehaviour 
 {
     [SerializeField] private Transform _parent;
     private ModelChooseButtonFactory _modelChooseButtonFactory;
